@@ -32,7 +32,7 @@ export default class AddSocials {
       });
       wpMedia.on("select", () => {
         const attachment = wpMedia.state().get("selection").first().toJSON();
-        this.changeInputValue(imgInput, attachment.url);
+        this.changeInputValue(imgInput, attachment.id);
         if (imgPreview) imgPreview.src = attachment.url;
         else {
           imgPreview = document.createElement("img");
