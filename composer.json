@@ -1,0 +1,19 @@
+{
+  "name": "asus/jins-social-plugin",
+  "description": "Practice plugin",
+  "type": "project",
+  "license": "GPL",
+  "authors": [
+    {
+      "name": "Trung Hieu \"Jin\" Phan",
+      "email": "phantrunghieu1291@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "jinsSocialPlugin\\": ""
+    }
+  }
+}
