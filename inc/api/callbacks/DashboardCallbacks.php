@@ -7,11 +7,10 @@ namespace jinsSocialPlugin\inc\api\callbacks;
 use jinsSocialPlugin\inc\base\BaseController;
 class DashboardCallbacks extends BaseController {
   public function dashboardPage() {
-    return require_once("$this->plugin_path/templates/dashboard.php");
+    return require_once "$this->plugin_path/templates/dashboard.php";
   }
   public function fieldSanitize($input) {
-    $options = get_option( 'jins_social_plugin_dashboard' ) ?? []; 
-
+    $options = get_option( 'jins_social_plugin_socials' ) ?? []; 
     if( count($options) == 0 ) {
       return $options[] = $input;
     }

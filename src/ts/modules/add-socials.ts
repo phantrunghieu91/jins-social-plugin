@@ -85,7 +85,7 @@ export default class AddSocials {
 
       const newSocialIconInput = document.createElement("input");
       newSocialIconInput.type = "hidden";
-      newSocialIconInput.name = `jins_social_plugin_dashboard[${count}][social_icon]`;
+      newSocialIconInput.name = `jins_social_plugin_socials[${count}][social_icon]`;
 
       const newSelectIconBtn = document.createElement("a");
       newSelectIconBtn.classList.add("button", "jins-social__select-icon-btn");
@@ -105,12 +105,12 @@ export default class AddSocials {
 
       const newSocialNameInput = document.createElement("input");
       newSocialNameInput.type = "text";
-      newSocialNameInput.name = `jins_social_plugin_dashboard[${count}][social_name]`;
+      newSocialNameInput.name = `jins_social_plugin_socials[${count}][social_name]`;
       newSocialNameInput.placeholder = "Social Name";
 
       const newSocialUrlInput = document.createElement("input");
       newSocialUrlInput.type = "text";
-      newSocialUrlInput.name = `jins_social_plugin_dashboard[${count}][social_url]`;
+      newSocialUrlInput.name = `jins_social_plugin_socials[${count}][social_url]`;
       newSocialUrlInput.placeholder = "Social URL";
 
       const newSocialIconContainer = createNewSocialIconContainer(count);

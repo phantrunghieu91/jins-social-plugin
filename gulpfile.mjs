@@ -29,7 +29,7 @@ const paths = {
   },
   ts: {
     src: 'src/ts/export/',
-    entries: ['jins-social-plugin'],
+    entries: ['jins-social-plugin', 'jins-social-plugin-fe'],
     dest: './assets/js',
     watch: 'src/ts/**/*.ts',
   },
@@ -42,7 +42,7 @@ function initBrowserSync() {
   browserSync.init({
     open: false,
     injectChanges: true,
-    proxy: 'http://building-plugins.local/wp-admin/admin.php?page=jins_social_plugin',
+    proxy: 'http://building-plugins.local',
     // https: {
     //   key: './ssl/jins-social-plugin.local-key.pem',
     //   cert: './ssl/jins-social-plugin.local.pem',

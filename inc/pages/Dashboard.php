@@ -25,7 +25,7 @@ class Dashboard extends BaseController
     $this->setSettings();
     $this->setSections();
 
-    $this->settings->addPages($this->pages)->register();
+    $this->settings->addPages($this->pages)->withSubPage('Add Socials Media')->register();
   }
 
   public function setPages()
@@ -47,8 +47,8 @@ class Dashboard extends BaseController
   {
     $args = [
       [
-        'option_group' => 'jins_social_plugin_settings',
-        'option_name' => 'jins_social_plugin_dashboard',
+        'option_group' => 'jins_social_plugin_dashboard',
+        'option_name' => 'jins_social_plugin_socials',
         'callback' => [$this->callbacks, 'fieldSanitize']
       ]
     ];
@@ -59,7 +59,7 @@ class Dashboard extends BaseController
     $args = [
       [
         'id' => 'jins_social_admin_index',
-        'title' => 'Settings',
+        'title' => 'Add New Socials Media',
         'callback' => [$this->callbacks, 'sectionManager'],
         'page' => 'jins_social_plugin', // same as menu_slug
       ]

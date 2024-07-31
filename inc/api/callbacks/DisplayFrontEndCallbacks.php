@@ -7,16 +7,13 @@ namespace jinsSocialPlugin\inc\api\callbacks;
 use jinsSocialPlugin\inc\base\BaseController;
 
 class DisplayFrontEndCallbacks extends BaseController {
+  public function displayFrontEndPage() {
+    return require_once "$this->plugin_path/templates/display-on-frontend.php";
+  }
   public function fieldSanitize($input) {
-    // $options = get_option( 'jins_social_plugin_dashboard' ) ?? []; 
-
-    // if( count($options) == 0 ) {
-    //   return $options[] = $input;
-    // }
-
     return $input;
   }
   public function sectionManager() {
-    echo 'Settings for displaying social media icons in the front end';
+    echo __('Settings for displaying social media icons in the front end!', 'jins-social-plugin');
   }
 }
