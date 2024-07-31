@@ -1,0 +1,21 @@
+@use "../abstracts" as *;
+
+.jins-socials {
+  position: fixed;
+  z-index: 9999;
+  @include d-flex( column, center, center, nowrap );
+  gap: var(--jins-socials-gap, .625em);
+  inset: var(--jins-socials-top, $jins-socials-top) var(--jins-socials-right, $jins-socials-right) var(--jins-socials-bottom, $jins-socials-bottom) var(--jins-socials-left, $jins-socials-left);
+
+  &__link {
+    display: block;
+    line-height: 1;
+    width: var(--jins-socials-icon-size, $jins-socials-icon-size);
+    height: var(--jins-socials-icon-size, $jins-socials-icon-size);
+  }
+  
+  &__icon {
+    width: 100%;
+    height: 100%;
+  }
+}

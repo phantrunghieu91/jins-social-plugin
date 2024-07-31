@@ -36,7 +36,7 @@ $options = get_option('jins_social_plugin_dashboard') ?? [];
                 <input type="hidden" name="jins_social_plugin_dashboard[<?= $i ?>][social_icon]" value="<?= !empty($option['social_icon']) ? $option['social_icon'] : '' ?>">
                 <a href="javascript:void(0);" class="button jins-social__select-icon-btn">Select Icon</a>
                 <?php if( $option['social_icon'] ): ?>
-                  <img src="<?= esc_url($option['social_icon']) ?>" alt="Social Icon" class="jins-social__social-icon-img">
+                  <img src="<?= wp_get_attachment_image_url( $option['social_icon'], 'thumbnail', true ) ?>" alt="Social Icon" class="jins-social__social-icon-img">
                   <a class="jins-social__remove-icon-btn" href="javascript:void(0);"></a>
                 <?php endif; ?>
               </div>

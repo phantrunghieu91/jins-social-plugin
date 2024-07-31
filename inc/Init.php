@@ -15,6 +15,7 @@ class Init {
     return [
       base\Enqueue::class,
       pages\Dashboard::class,
+      base\DisplayFrontEndController::class,
     ];
   }
   public static function register_services() {
