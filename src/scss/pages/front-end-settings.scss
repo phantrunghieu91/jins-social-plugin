@@ -1,0 +1,91 @@
+@use '../abstracts/' as *;
+
+.fe-settings__form {
+  $columns-number: 2;
+  padding: 2em;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat($columns-number, 1fr);
+  gap: 1.25em;
+
+  & > :is( h2, p ) {
+    grid-column: span $columns-number;
+    margin-block: 0 1em;
+  }
+
+  fieldset {
+    $field-set-color: map-get($primary-colors, 600);
+    border: 1px solid $field-set-color;
+    padding-block: .625em 1em;
+    padding-inline: 1em;
+
+    legend {
+      background-color: $field-set-color;
+      color: #fff;
+      padding: .3125em .625em;
+    }
+
+    & > .form-group {
+      @include d-flex( row, flex-start, center, nowrap );
+      gap: .625em;
+
+      input {
+        margin: 0;
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: .625em;
+      }
+    }
+  }
+
+  & > .form-group {
+    display: grid;
+    grid-template-columns: 10em 1fr;
+    align-items: center;
+    gap: .625em;
+    
+    & > input {
+      $input-on-hover-border-color: map-get($primary-colors, 500);
+      border-radius: 0;
+      transition: outline 300ms, border-color 250ms;
+
+      &:hover {
+        border-color: $input-on-hover-border-color;
+      }
+
+      &:focus-visible {
+        border-color: $input-on-hover-border-color;
+        outline: 2px solid $input-on-hover-border-color;
+      }
+    }
+
+    & > .instruction {
+      grid-column: span 2;
+      font-size: .875em;
+      color: #666;
+      font-style: italic;
+    }
+  }
+
+  @media (width < toRem(800)) {
+    & > .form-group {
+      grid-column: span 2;
+    }
+  }
+
+  @media (width < toRem(400)) {
+    grid-template-columns: 1fr;
+    & > :is( h2, p, .form-group ) {
+      grid-column: span 1;
+    }
+
+    & > .form-group {
+      grid-template-columns: 1fr;
+
+      & > .instruction {
+        grid-column: span 1;
+      }
+    }
+  }
+}

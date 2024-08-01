@@ -6,7 +6,6 @@
 $options = get_option('jins_social_plugin_display_fe_settings') ?? [];
 ?>
 <div class="wrap">
-  <h1><?= _e('Display Front End Settings', 'jins-social-plugin') ?></h1>
   <?php settings_errors(  ); ?>
   <form action="options.php" class="fe-settings__form" method="POST">
     <?php 
@@ -59,6 +58,18 @@ $options = get_option('jins_social_plugin_display_fe_settings') ?? [];
       <label for="margin-vertical"><?php _e("Margin vertical:", 'jins-social-plugin') ?></label>
       <input type="text" id="margin-vertical" name="jins_social_plugin_display_fe_settings[margin-vertical]" value="<?= $options['margin-vertical'] ?? '' ?>" placeholder="Space from icons to bottom. Ex: 10px or .625em" required />
       <p class="instruction"><?= _e('Enter space from icons to bottom unit: px, em or rem. Ex: 24px, 2rem, 2em', 'jins-social-plugin') ?></p>
+    </div>
+
+    <div class="form-group">
+      <label for="hide-in-mobile"><?= __("Hide in mobile:", "jins-social-plugin") ?></label>
+      <input type="checkbox" id="hide-in-mobile" name="jins_social_plugin_display_fe_settings[hide-in-mobile]" <?= $options['hide-in-mobile'] ? 'checked' : '' ?> />
+      <p class="instruction"><?= __("Check to hide icons in mobile view", "jins-social-plugin") ?></p>
+    </div>
+
+    <div class="form-group">
+      <label for="has-tooltip"><?= __("Has Tooltip:", "jins-social-plugin") ?></label>
+      <input type="checkbox" id="has-tooltip" name="jins_social_plugin_display_fe_settings[has-tooltip]" <?= $options['has-tooltip'] ? 'checked' : '' ?> />
+      <p class="instruction"><?= __("Check to show social name as tooltip when hover on social icon.", "jins-social-plugin") ?></p>
     </div>
     <?php submit_button( ); ?>
   </form>

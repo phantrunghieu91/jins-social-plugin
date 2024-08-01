@@ -1,0 +1,4 @@
+@use 'functions' as *;
+
+$primary-colors: create-color-map(#5F9EA0);
+$secondary-colors: create-color-map(#A0615F);

@@ -7,14 +7,44 @@
   gap: var(--jins-socials-gap, .625em);
   inset: var(--jins-socials-top, $jins-socials-top) var(--jins-socials-right, $jins-socials-right) var(--jins-socials-bottom, $jins-socials-bottom) var(--jins-socials-left, $jins-socials-left);
 
+  &.hide-on-mobile {
+    @media screen and (max-width: toRem(768)){
+      display: none;
+      z-index: -1;
+    }
+  }
+
   &__link {
+    position: relative;
     display: block;
     line-height: 1;
     width: var(--jins-socials-icon-size, $jins-socials-icon-size);
     height: var(--jins-socials-icon-size, $jins-socials-icon-size);
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.05);     
+    }
+  }
+
+  &__tooltip {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    inset: 50% var(--jins-socials-tooltip-right, auto) auto var(--jins-socials-tooltip-left, 0);
+    transform: translate( var(--jins-social-tooltip-transform-x, 100%), -50% );
+    transition: transform 300ms, opacity 300ms;
+  }
+
+  &__link:hover > &__tooltip {
+    z-index: 2;
+    opacity: 1;
+    --jins-social-tooltip-transform-x: -120%;
   }
   
   &__icon {
+    position: relative;
+    z-index: 1;
     width: 100%;
     height: 100%;
   }

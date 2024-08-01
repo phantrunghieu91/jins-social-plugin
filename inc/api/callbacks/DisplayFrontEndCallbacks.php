@@ -11,9 +11,17 @@ class DisplayFrontEndCallbacks extends BaseController {
     return require_once "$this->plugin_path/templates/display-on-frontend.php";
   }
   public function fieldSanitize($input) {
+    if ( isset($input['hide-in-mobile']) ) {
+      $input['hide-in-mobile'] = isset($input['hide-in-mobile']);
+    }
+
+    if ( isset($input['has-tooltip']) ) {
+      $input['has-tooltip'] = isset($input['has-tooltip']);
+    }
+
     return $input;
   }
   public function sectionManager() {
-    echo __('Settings for displaying social media icons in the front end!', 'jins-social-plugin');
+    echo sprintf( "<p>%s</p>", __('Settings for displaying social media icons in the front end!', 'jins-social-plugin') );
   }
 }

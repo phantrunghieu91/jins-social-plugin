@@ -6,7 +6,6 @@
 $options = get_option('jins_social_plugin_socials') ?? [];
 ?>
 <div class="wrap jins-social">
-  <h1>Jins Social Plugin</h1>
   <?php settings_errors(); ?>
 
   <form class="jins-social__form" method="POST" action="options.php"

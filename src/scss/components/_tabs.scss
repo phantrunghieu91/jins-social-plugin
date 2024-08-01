@@ -1,7 +1,7 @@
 @use '../abstracts/' as *;
 
 .tab-nav {
-  $tab-nav-item-color: #5F9EA0;
+  $tab-nav-item-color: map-get($primary-colors, 500);
   @include d-flex();
   gap: .1em;
   margin-block: 1rem 0;
@@ -15,7 +15,7 @@
     color: darken($tab-nav-item-color, 10%);
 
     &:hover {
-      background-color: lighten($tab-nav-item-color, 25%);
+      background-color: map-get($primary-colors, 300);
     }
 
     &--active {
